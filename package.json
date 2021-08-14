@@ -1,6 +1,6 @@
 {
   "name": "i18n-next-tools-gs",
-  "version": "1.0.1",
+  "version": "1.0.11",
   "description": "Sync translations with google sheets",
   "keywords": [
     "i18next",
@@ -27,7 +27,7 @@
   "homepage": "https://github.com/anton-nagornyi/i18n-next-tools-gs#readme",
   "dependencies": {
     "googleapis": "^39.2.0",
-    "i18n-next-tools": "^1.0.3"
+    "i18n-next-tools": "^1.0.4"
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",

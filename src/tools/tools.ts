@@ -1,6 +1,6 @@
 import * as fs from 'fs/promises';
 import { google, sheets_v4 } from 'googleapis';
-import { createTranslations, mergeResources, scanResources } from 'i18n-next-tools';
+import { createTranslations, mergeResources, scanResources } from 'i18n-next-tools/tools';
 import { config } from '../config';
 
 export const readGoogleSheetData = async (): Promise<[sheets_v4.Sheets, string[][] | undefined]> => {
@@ -39,11 +39,11 @@ export const sheetDataToResource = (values?: string[][]): object => {
   for (let i = 1; i < values.length; ++i) {
     const [ns, key, ...vals] = values[i];
     for (let j = 0; j < vals.length; ++j) {
-      const lng = dist[langs[i]] || {} as any;
+      const lng = dist[langs[j]] || {} as any;
       const namespace = lng[ns] || {} as any;
       namespace[key] = vals[j];
       lng[ns] = namespace;
-      dist[langs[i]] = lng;
+      dist[langs[j]] = lng;
     }
   }
   return dist;
